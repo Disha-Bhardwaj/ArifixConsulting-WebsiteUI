@@ -1,0 +1,12 @@
+.footerBg {
+  background: #312F2F;
+}
+
+h4 {
+  color: #ffffff !important;
+}
+@media (max-width: 992px) {
+  .footerBg {
+    display: none;
+  }
+}
