@@ -12,6 +12,8 @@ import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { HomeComponent } from './views/components/home/home.component';
+import { ListingComponent } from './views/components/listing/listing.component';
+import { SearchComponent } from './views/components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './views/components/home/home.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ListingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

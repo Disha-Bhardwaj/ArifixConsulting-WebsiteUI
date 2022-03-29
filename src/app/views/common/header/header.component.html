@@ -1,5 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid bg-dark">
   <div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
     <a href="#" class="navbar-brand mx-lg-4 mx-sm-4 "><img src="../../../../assets/images/Vector.png"
                                                            class="vector"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -7,27 +10,30 @@
             (click)="menuExpand = !menuExpand">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
     <div class="collapse navbar-collapse" [ngClass]="{'show' : menuExpand === true, '' : menuExpand === false }"
          id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <li class="nav-item menuSpace">
+        <li class="nav-item menuSpace text-end">
           <a class="nav-link pt-3 header" href="#">Download App</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item text-end">
           <a class="nav-link  pt-3 header" href="#">Features</a>
         </li>
-        <li class="nav-item menuSpace-login ">
-<!--          <div class="login" (click)="navigateTo('login')">-->
-            <a class="nav-link  pt-3 header" href="#">Login/Register &nbsp; <img src="../../../../assets/Icons/icon.png" class="loginIcon"/> </a>
-
-<!--          </div>-->
+        <li class="nav-item menuSpace-login text-end">
+          <a class="nav-link  pt-3 header" (click)="navigateTo('/login')">Login/Register &nbsp; <img src="../../../../assets/Icons/icon.png"
+                                                                               class="loginIcon"/> </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-item pt-3 nav-link lang-noheader">&nbsp;<img src="../../../../assets/images/globe.png" class="globeIcon"/></a>
-          <a href="#" class="nav-item pt-3 nav-link lang header">Language &nbsp;<img src="../../../../assets/images/globe.png" class="globeIcon"/></a>
+        <li class="nav-item text-end">
+          <a href="#" class="nav-item pt-3 nav-link lang-noheader">&nbsp;<img src="../../../../assets/images/globe.png"
+                                                                              class="globeIcon"/></a>
+          <a href="#" class="nav-item pt-3 nav-link lang header">Language &nbsp;<img
+            src="../../../../assets/images/globe.png" class="globeIcon"/></a>
         </li>
       </ul>
     </div>
+  </nav>
   </div>
-</nav>
+</div>
 
