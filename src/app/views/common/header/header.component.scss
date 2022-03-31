@@ -1,0 +1,52 @@
+/* Global View ( Desktop View )*/
+.headerBg {
+  background: #312F2F;
+}
+
+.menuSpace {
+  padding-left: 350px;
+}
+
+.menuSpace-login {
+  padding-left: 300px;
+}
+
+.login {
+  width: 175px;
+  display: flex;
+}
+
+.lang-noheader {
+  margin-top: 3px;
+  display: block;
+}
+
+.lang {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .menuSpace {
+    padding-left: 10px;
+    text-align: right;
+  }
+  .menuSpace-login {
+    padding-left: 0px;
+    text-align: right;
+  }
+  .lang-noheader {
+    display: none;
+  }
+  .lang {
+    margin-top: 3px;
+    display: block;
+  }
+  .nav-item {
+    text-align: right;
+  }
+  a{
+    text-align: right;
+    align-items: unset;
+  }
+}
+

@@ -1,0 +1,78 @@
+.createPassword {
+  width: 48%;
+}
+
+.repeatPassword {
+  width: 48%;
+}
+
+.wrapper {
+  display: block;
+  bottom: 15px;
+  position: relative;
+  width: 50px;
+  height: 500px;
+
+}
+
+.line {
+  position: absolute;
+  left: 49%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  color: #312F2F;
+  background: #312F2F;
+  z-index: 1;
+}
+
+.wordwrapper {
+  text-align: center;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  z-index: 2;
+}
+
+.word {
+  color: #312F2F;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px;
+  font-weight: bold;
+  background: #fff;
+}
+
+.line-h {
+  display: none;
+}
+
+.line-h-span {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .wrapper {
+    display: none;
+  }
+
+  .line-h {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+
+  .line-h-span {
+    display: initial;
+    background: #ffffff;
+    padding: 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
