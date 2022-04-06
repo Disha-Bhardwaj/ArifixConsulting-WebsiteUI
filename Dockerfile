@@ -2,6 +2,7 @@ FROM node:17-slim as build
 
 WORKDIR /user/src/app
 ENV NODE_ENV=production
+RUN npm install -g @angular/cli
 RUN ng build --prod
 RUN cp -r dist/afirix /app/
 
