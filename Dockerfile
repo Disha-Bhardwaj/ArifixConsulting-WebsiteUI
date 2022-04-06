@@ -1,11 +1,11 @@
-FROM node:12-slim as build
+FROM node:14 as build
 
 WORKDIR /user/src/app
 COPY . ./
-RUN npm install -g @angular/cli@12
+RUN npm install -g @angular/cli@12.0.0
 RUN npm install
 RUN ls -alh
-RUN ng build --prod
+RUN ng build
 RUN mkdir /app && cp -r dist/afirix /app/
 
 FROM nginx:1.21
