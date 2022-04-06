@@ -1,0 +1,23 @@
+stages:
+  - build
+
+variables:
+  DOCKER_HOST: tcp://docker:2376
+  DOCKER_TLS_CERTDIR: "/certs"
+  container_image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+default:
+  before_script:
+    - |
+      major_version=$(echo $CI_COMMIT_REF_SLUG | cut -d. -f1)
+
+
+build:build:
+  image: docker:19.03.13
+  services:
+    - docker:19.03.13-dind
+  stage: build
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    - docker build -t $container_image .
+    - docker push $container_image
