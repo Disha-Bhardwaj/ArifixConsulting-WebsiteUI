@@ -56,12 +56,6 @@ h3 {
   border: 0px solid black;
 }
 
-.tabs {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 40px;
-}
-
 @media (max-width: 992px) {
   .booking {
     display: none;
@@ -82,30 +76,5 @@ h3 {
   }
   .searchButton {
     width: unset;
-  }
-  h2 {
-    font-size: 24px !important;
-    line-height: 32px !important;;
-  }
-  .tabs {
-    font-size: 12px;
-    line-height: 40px;
-  }
-  .pt-4 {
-    padding-top: 0px !important;
-  }
-  .mt-4 {
-    margin-top: 0px !important;
-  }
-  hr.line {
-    border: unset;
-    height: unset;
-    background-color: unset;
-    border-radius: unset;
-  }
-
-  h2 {
-    font-size: 36px;
-    line-height: 50px;
   }
 }
