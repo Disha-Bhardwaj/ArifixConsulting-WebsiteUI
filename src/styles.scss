@@ -38,23 +38,25 @@ $font-family-sans-serif: "Montserrat", "Actor";
 }
 
 h5 {
-  /* H4 */
+  /* H5 */
 
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 40px;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 40px !important;
   /* identical to box height, or 167% */
 
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.25px;
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  letter-spacing: -0.25px !important;
 
   /* white text */
 
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
+
+
 
 .footer-ul {
   padding-left: 0px;
@@ -139,20 +141,20 @@ h2 {
 }
 
 h3 {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 50px;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 36px !important;
+  line-height: 50px !important;
   /* identical to box height, or 139% */
 
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.25px;
+  display: flex !important;
+  align-items: center !important;
+  text-align: center !important;
+  letter-spacing: -0.25px !important;
 
   /* Dark Text */
 
-  color: #312F2F;
+  color: #312F2F !important ;
 }
 
 label {
@@ -239,6 +241,21 @@ a {
   line-height: 24px;
   /* identical to box height, or 133% */
 
+  display: flex;
+  align-items: center;
+
+  /* Dark Text */
+
+  color: #312F2F;
+}
+
+.bold-16 {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
   display: flex;
   align-items: center;
 
