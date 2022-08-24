@@ -1,78 +1,105 @@
-.createPassword {
-  width: 48%;
-}
-
-.repeatPassword {
-  width: 48%;
-}
-
 .wrapper {
   display: block;
   bottom: 15px;
   position: relative;
   width: 50px;
-  height: 500px;
-
+  height: 550px;
 }
-
+.line-h,.line-h-span {
+  display: none;
+}
+button.btn.btn-primary.loginbtn {
+  width: 100%;
+  background: #004fcb;
+  height: 53px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  color: #ffffff;
+}
+.col-lg-5.col-md-5.col-sm-12 {
+  margin-top: 65px;
+}
+p.text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: -0.41px;
+  color: #312f2f;
+}
+.forgotText {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: -3%;
+}
+.form-control {
+  height: 50px !important;
+  border-radius: 6px !important;
+}
+.container.shadow.p-3.mb-3.bg-white.rounded {
+  background: #e4e4e4 !important;
+  margin-top: 16px;
+  padding-top: 37px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 50px !important;
+  border-radius: 6px !important;
+}
+h3.headText {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.36px;
+  color: #000000;
+}
 .line {
   position: absolute;
   left: 49%;
-  top: 0;
+  top: 23%;
   bottom: 0;
-  width: 2px;
-  color: #312F2F;
-  background: #312F2F;
+  width: 1px;
+  color: #312f2f;
+  background: #312f2f;
   z-index: 1;
 }
-
+.word {
+  color: #312f2f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  background: #fff;
+}
 .wordwrapper {
   text-align: center;
   height: 12px;
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 62%;
   margin-top: -12px;
   z-index: 2;
 }
-
-.word {
-  color: #312F2F;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 3px;
-  font-weight: bold;
-  background: #fff;
+.form-label {
+  color: #000000 !important;
+  line-height: 16px !important;
 }
-
-.line-h {
-  display: none;
+.eyeIconImg{
+  float: right;
+  margin-top: -20%;
+  margin-right: 5%;
 }
-
-.line-h-span {
-  display: none;
-}
-
-@media (max-width: 760px) {
-  .wrapper {
+@media (max-width: 760px) and (min-width: 300px){
+  .col-lg-1  {
     display: none;
-  }
-
-  .line-h {
-    display: block;
-    width: 100%;
-    text-align: center;
-    border-bottom: 2px solid #000;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-  }
-
-  .line-h-span {
-    display: initial;
-    background: #ffffff;
-    padding: 0 10px;
-    font-weight: bold;
-    text-transform: uppercase;
   }
 }

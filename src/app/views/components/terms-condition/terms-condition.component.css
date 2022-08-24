@@ -1,0 +1,23 @@
+.headtext {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 85px;
+  text-align: center;
+  margin-bottom: 41px;
+  letter-spacing: 0.36px;
+  color: #312f2f;
+}
+p.textP{
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  letter-spacing: -0.41px !important;
+  color: #312f2f !important;
+  margin-bottom: 25px;
+}
