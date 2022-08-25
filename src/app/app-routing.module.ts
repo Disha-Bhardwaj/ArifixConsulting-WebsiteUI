@@ -11,6 +11,7 @@ import { ResetPasswordComponent } from './views/components/reset-password/reset-
 import { ForgotPassEmailComponent } from './views/components/forgot-pass-email/forgot-pass-email.component';
 import { MyDetailCustomerComponent } from './views/components/my-detail-customer/my-detail-customer.component';
 import { FeaturesComponent } from './views/components/features/features.component';
+import { ServiceComponent } from './views/components/service/service.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPassEmailComponent },
   { path: 'my-detail-customer', component: MyDetailCustomerComponent },
   { path: 'features', component: FeaturesComponent },
+  { path: 'service', component: ServiceComponent },
   { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -22,27 +22,6 @@ $font-family-sans-serif: "Montserrat", "Actor";
 //  font-family: Montserrat, sans-serif !important;
 //}
 
-
-h5 {
-  /* H5 */
-
-  font-style: normal !important;
-  font-weight: 600 !important;
-  font-size: 24px !important;
-  line-height: 40px !important;
-  /* identical to box height, or 167% */
-
-  display: flex !important;
-  align-items: center !important;
-  text-align: center !important;
-  letter-spacing: -0.25px !important;
-
-  /* white text */
-
-  color: #FFFFFF !important;
-}
-
-
 .form-label {
   font-family: 'Montserrat';
   font-style: normal;
@@ -72,23 +51,6 @@ h5 {
   background: #FFFFFF;
   border-radius: 100px;
 }
-
-h2 {
-  // font-family: Montserrat !important;
-  font-style: normal !important;
-  font-weight: 600 !important;
-  font-size: 48px !important;
-  line-height: 65px !important;
-  /* or 135% */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.25px;
-
-  color: #312F2F;
-}
-
 label {
   font-family: Actor !important;
   font-style: normal;

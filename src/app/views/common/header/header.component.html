@@ -8,7 +8,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-   
     <div class="collapse navbar-collapse" [ngClass]="{'show' : menuExpand === true, '' : menuExpand === false }"
       id="navbarSupportedContent"  >
       <ul class="navbar-nav">
@@ -16,7 +15,7 @@
           <a class="nav-link pt-3 header">Download App</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  pt-3 header">Features</a>
+          <a class="nav-link  pt-3 header" routerLink="/features">Features</a>
         </li>
       </ul>
         <ul class="navbar-nav"  style="margin-right: -14%;">
@@ -29,8 +28,6 @@
                 class="globeIcon" /></a>
           </li>
         </ul>
-        
-      
     </div>
   </div>
 </nav>
