@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPassEmailComponent implements OnInit {
 
+  showNumberOption = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+  changeOption(event: any) {
+    if (event.target.checked) {
+      this.showNumberOption = true
+    } else {
+      this.showNumberOption = false
+    }
   }
 
 }

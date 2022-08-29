@@ -22,6 +22,7 @@ import { ResetPasswordComponent } from './views/components/reset-password/reset-
 import { ServiceComponent } from './views/components/service/service.component';
 import { MyDetailCustomerComponent } from './views/components/my-detail-customer/my-detail-customer.component';
 import { FeaturesComponent } from './views/components/features/features.component';
+import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FeaturesComponent } from './views/components/features/features.componen
     ResetPasswordComponent,
     ServiceComponent,
     MyDetailCustomerComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    MyBookingComponent
   ],
   imports: [
     BrowserModule,

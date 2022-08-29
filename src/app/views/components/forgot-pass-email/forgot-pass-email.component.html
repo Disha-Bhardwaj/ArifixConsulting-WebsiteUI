@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row m-4">
+        <div class="col-lg-2 col-md-2 col-sm-12  p-lg-3 m-lg-4">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 shadow p-3 mb-3 bg-white rounded ">
+            <div class="mb-3 toggle">
+                <label class="switch">
+                    <input type="checkbox" (change)="changeOption($event)">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <h3 class="headText">Reset Password </h3>
+            <form>
+                <div class="mb-3" *ngIf="!showNumberOption">
+                    <label class="form-label" for="txtEmail">Email Address</label>
+                    <input type="text" class="form-control" id="txtEmail">
+                </div>
+                <div class="row" *ngIf="showNumberOption">
+                    <div class="col-4">
+                        <label class="form-label" for="txtPhoneExt">Area code</label>
+                        <input type="number" class="form-control " id="txtPhoneExt" formControlName="areaCode">
+                    </div>
+                    <div class="col-8 ">
+                        <label class="form-label" for="txtPhoneExt">Phone Number</label>
+                        <input type="number" class="form-control " id="txtPhone" formControlName="phone">
+                    </div>
+                </div>
+                <div class="mb-3 needHelp">
+                    <button class="btn btn-primary loginbtn" routerLink="/reset-password">Next</button>
+                    <label class="form-label">Need Help?</label>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12  p-lg-3 m-lg-4">
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { ForgotPassEmailComponent } from './views/components/forgot-pass-email/f
 import { MyDetailCustomerComponent } from './views/components/my-detail-customer/my-detail-customer.component';
 import { FeaturesComponent } from './views/components/features/features.component';
 import { ServiceComponent } from './views/components/service/service.component';
+import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'my-detail-customer', component: MyDetailCustomerComponent },
   { path: 'features', component: FeaturesComponent },
   { path: 'service', component: ServiceComponent },
+  { path: 'my-bookings', component: MyBookingComponent },
   { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
