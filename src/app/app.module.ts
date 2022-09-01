@@ -23,6 +23,7 @@ import { ServiceComponent } from './views/components/service/service.component';
 import { MyDetailCustomerComponent } from './views/components/my-detail-customer/my-detail-customer.component';
 import { FeaturesComponent } from './views/components/features/features.component';
 import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
+import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MyBookingComponent } from './views/components/my-booking/my-booking.com
     ServiceComponent,
     MyDetailCustomerComponent,
     FeaturesComponent,
-    MyBookingComponent
+    MyBookingComponent,
+    SalonPageComponent,
   ],
   imports: [
     BrowserModule,

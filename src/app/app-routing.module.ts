@@ -13,6 +13,7 @@ import { MyDetailCustomerComponent } from './views/components/my-detail-customer
 import { FeaturesComponent } from './views/components/features/features.component';
 import { ServiceComponent } from './views/components/service/service.component';
 import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
+import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'features', component: FeaturesComponent },
   { path: 'service', component: ServiceComponent },
   { path: 'my-bookings', component: MyBookingComponent },
+  { path: 'salon', component: SalonPageComponent
+   },
   { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];

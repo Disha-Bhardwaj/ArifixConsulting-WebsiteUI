@@ -1,0 +1,164 @@
+<div class="container-fluid">
+    <div class="container">
+        <!-- salon nav and search -->
+        <div class="row m-4 firstRow">
+            <div class="col-lg-6 col-md-6 col-sm-12 ">
+                <img src="assets/images/salonIcon.png" class="salonPageIcon">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 searchcol">
+                <div><input class="searchInp" placeholder="search"><span><img class="searchIcom"
+                    src="assets/Icons/search.png"></span></div>
+                
+            </div>
+        </div>
+        <!-- Image -->
+        <div class="row m-4 secondRow">
+            <img src="assets/images/imgSalon.png" class="salonPageIcon">
+        </div>
+        <!-- salon details -->
+        <div class="row m-4 thirdRow">
+            <div class="col-lg-6 col-md-6 col-sm-12 addressC">
+                <div class="details">
+                    <h6 class="headName">FLORANCE </h6>
+                    <p class="pAddress">Lange Striche 29, 91074
+                        Herzogenaurach</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 locationCol">
+                <div class="place">
+                    <img src="assets/Icons/marker.png"><span style="margin-left: 12px;">1.2 km</span>
+                    <span style="margin-left: 30px;">Map View </span>
+                    <label class="switch" style="margin-left: 17px;">
+                        <input type="checkbox" >
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- salon details switch -->
+        <div class="row m-4 fourthRow">
+            <div class="col-lg-12 col-md-12 col-sm-12 switchCol">
+                <h5 class="switchText" [class.active]="viewMode=='service'" (click)="viewMode='service'" style="padding-left: 0px;">Service</h5>
+                <h5 class="switchText" [class.active]="viewMode=='details'" (click)="viewMode='details'">Details</h5>
+                <h5 class="switchText" [class.active]="viewMode=='staff'" (click)="viewMode='staff'">Staff</h5>
+            </div>
+        </div>
+      
+    </div>
+    <div class="container" [ngSwitch]="viewMode">
+          <!-- Services -->
+          <div class="row m-4 servicesRow" *ngSwitchCase="'service'">
+            <div class="col-lg-12 col-md-12 col-sm-12 ">
+
+            </div>
+        </div>
+        <!-- details -->
+        <div class="row m-4 detailsRow" *ngSwitchCase="'details'">
+            <div class="col-lg-5 col-md-5 col-sm-12 ">
+                <p class="openingText">Opening Times</p>
+                <div class="openDays">
+                    <div class="row m-4">
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Monday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Tuesday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Wednesday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Thursday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Friday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Saturday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Sunday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">closed</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">closed</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 ">
+                <p class="addressText">Address</p>
+                <p class="addressText">City</p>
+                <p class="addressText">Country</p>
+                <p class="addressText">Zipcode</p>
+                <p class="addressText">Phone Number</p>
+            </div>
+
+        </div>
+        <!-- staff -->
+        <div class="row m-4 staffRow" *ngSwitchCase="'staff'">
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
