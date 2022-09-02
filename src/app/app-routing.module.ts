@@ -29,8 +29,7 @@ const routes: Routes = [
   { path: 'features', component: FeaturesComponent },
   { path: 'service', component: ServiceComponent },
   { path: 'my-bookings', component: MyBookingComponent },
-  { path: 'salon', component: SalonPageComponent
-   },
+  { path: 'salon', component: SalonPageComponent },
   { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
