@@ -1,0 +1,307 @@
+.row.m-4 {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.inFirstDiv {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: center;
+}
+h3.headFilter {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.25px;
+}
+.form-control {
+  padding: 10px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #312f2f;
+  border-radius: 6px;
+}
+span.locID {
+  margin-left: -3%;
+}
+span.starRate {
+  margin-left: -3%;
+}
+.form-label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.mb-3 {
+  margin-bottom: 25px !important;
+}
+.block {
+  background: #e4e4e4;
+  padding: 22px;
+  margin-top: 37px;
+  border-radius: 10px;
+}
+.firstClick {
+  background: #ffffff;
+  box-shadow: 2px 1px 4px 1px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  margin-top: 26px;
+  padding-left: 10px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+.ratingImg {
+  margin-right: -5%;
+}
+.headSer {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.25px;
+}
+.serviceText {
+  display: flex;
+  align-items: center;
+}
+h3.serviceH,
+.timeP,
+p.serviceP {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #312f2f;
+  margin-bottom: 0px !important;
+  margin-left: 7px;
+}
+.secondClick {
+  padding: 10px 0px 10px 0px;
+}
+.colServices {
+  padding: 3px 10px 3px 5px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.priceDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+p.priceP {
+  margin-top: 14px;
+  margin-right: 12px;
+}
+button.btn.btn-primary.gotoSalon {
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  background: #004fcb;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+}
+input.dateIn {
+  border: none;
+  box-shadow: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url(src\assets\Icons\down.png) no-repeat;
+  margin-top: 14px;
+}
+.textTime {
+  padding: 10px;
+  width: 57px;
+  height: 45px;
+  background: #e4e4e4;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.timesList {
+  display: flex;
+  margin-top: 8px;
+}
+.detailText {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #312f2f;
+  margin-bottom: 0px;
+}
+.bookSlotCOl {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.cart {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+h4.confirmBook {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.35px;
+  color: #000000;
+}
+p.cartText {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #312f2f;
+  margin-bottom: 1px;
+}
+button.btn.btn-primary.removeBTN {
+  padding: 10px 20px;
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background: transparent;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #000000;
+  margin-top: 8px;
+}
+button.btn.btn-primary.priceBTN {
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  height: 51px;
+  background: #004fcb;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: -0.41px;
+  color: #ffffff;
+  border-radius: 6px;
+}
+h5.interest {
+  text-align: center;
+}
+.col-lg-9.col-md-9.col-sm-12 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #007aff;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #d0e3f1;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+input.searchInp {
+  padding: 20px 50px;
+  width: 350px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+img.searchIcom {
+  margin-left: -90%;
+  width: 24px;
+  height: 24px;
+}
+.searchSelDiv {
+  display: flex;
+  flex-direction: row;
+}
+.searchedText {
+  padding: 10px;
+  height: 45px;
+  margin-left: 20px;
+  margin-top: 16px;
+  background: #e4e4e4;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+.mapDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+  margin-left: 22%;
+}

@@ -24,6 +24,8 @@ import { MyDetailCustomerComponent } from './views/components/my-detail-customer
 import { FeaturesComponent } from './views/components/features/features.component';
 import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
 import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
+import { DownloadAppComponent } from './views/components/download-app/download-app.component';
+import { SearchPageComponent } from './views/components/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { SalonPageComponent } from './views/components/salon-page/salon-page.com
     FeaturesComponent,
     MyBookingComponent,
     SalonPageComponent,
+    DownloadAppComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

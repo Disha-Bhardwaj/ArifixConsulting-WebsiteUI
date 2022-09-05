@@ -14,6 +14,8 @@ import { FeaturesComponent } from './views/components/features/features.componen
 import { ServiceComponent } from './views/components/service/service.component';
 import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
 import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
+import { DownloadAppComponent } from './views/components/download-app/download-app.component';
+import { SearchPageComponent } from './views/components/search-page/search-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,7 +32,9 @@ const routes: Routes = [
   { path: 'service', component: ServiceComponent },
   { path: 'my-bookings', component: MyBookingComponent },
   { path: 'salon', component: SalonPageComponent },
-  { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
+  { path: 'download-app', component: DownloadAppComponent },
+  { path: 'search', component: SearchPageComponent },
+  // { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
 

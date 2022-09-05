@@ -23,9 +23,17 @@ export class SalonPageComponent implements OnInit {
   expanded: boolean = false;
   showServiceDetail = false
   viewMode = 'service';
+  showMap = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+  showMapUI(event: any){
+    if (event.target.checked) {
+      this.showMap = true
+    } else {
+      this.showMap = false
+    }
   }
 
 }
