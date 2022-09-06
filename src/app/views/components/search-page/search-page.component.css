@@ -47,6 +47,8 @@ span.starRate {
   padding: 22px;
   margin-top: 37px;
   border-radius: 10px;
+  width: 419px;
+  height: max-content;
 }
 .firstClick {
   background: #ffffff;

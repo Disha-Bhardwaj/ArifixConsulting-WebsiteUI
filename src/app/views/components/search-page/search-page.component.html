@@ -16,12 +16,18 @@
       </div>
       <div class="mapDiv">
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" (change)="showMapUI($event)">
           <span class="slider round"></span>
         </label>
         <span class="mapText">Map View </span>
       </div>
     </div>
+  </div>
+  <!-- display map -->
+  <div class="row m-4" style="margin-top: 30px !important;">
+    <iframe *ngIf="showMap"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2637845.982375067!2d13.231848971506263!3d49.78566123052315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd7dd8243%3A0xf8661c75d3db586f!2sCzechia!5e0!3m2!1sen!2sin!4v1662138137642!5m2!1sen!2sin"
+      width="600" height="450" style="border:0;"></iframe>
   </div>
   <!-- service blocks and filters -->
   <div class="row m-4">
@@ -31,45 +37,70 @@
       <form>
         <div class="mb-3">
           <label class="form-label" for="txtRegisterEmail">Location</label>
-          <input type="text" class="form-control" id="txtRegisterEmail">
+          <input type="text" class="form-control" id="txtRegisterEmail" placeholder="Enter">
         </div>
         <div class="mb-3">
           <div class="row">
             <div class="col-6">
               <label class="form-label" for="txtPhoneExt">Time</label>
-              <input type="number" class="form-control " id="txtPhoneExt">
+              <select class="form-control">
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="9:30 AM">9:30 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+              </select> 
             </div>
             <div class="col-6 ">
               <label class="form-label" for="txtPhoneExt">Time</label>
-              <input type="number" class="form-control " id="txtPhone">
+              <select class="form-control">
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="9:30 AM">9:30 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+              </select> 
             </div>
           </div>
         </div>
         <div class="mb-3">
           <label class="form-label" for="txtRegisterEmail">Date</label>
-          <input type="text" class="form-control" id="txtRegisterEmail">
+          <input type="date" class="form-control" id="txtRegisterEmail">
         </div>
         <div class="mb-3">
           <div class="row">
             <div class="col-6">
               <label class="form-label" for="txtPhoneExt">Price</label>
-              <input type="number" class="form-control " id="txtPhoneExt">
+              <select class="form-control">
+                <option value="£10">£10</option>
+                <option value="£20">£20</option>
+                <option value="£30">£30</option>
+                <option value="£40">£40</option>
+                <option value="£50+">£50+</option>
+              </select> 
             </div>
             <div class="col-6 ">
               <label class="form-label" for="txtPhoneExt">Time</label>
-              <input type="number" class="form-control " id="txtPhone">
+              <select class="form-control">
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="9:30 AM">9:30 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+              </select> 
             </div>
           </div>
         </div>
         <div class="mb-3">
           <label class="form-label" for="txtRegisterEmail">Salon Type</label>
-          <input type="text" class="form-control" id="txtRegisterEmail">
+          <select class="form-control">
+            <option value="Male Salon">Male Salon</option>
+            <option value="Female Salon">Female Salon</option>
+            <option value="Unisex Salon">Unisex Salon</option>
+          </select> 
         </div>
       </form>
     </div>
     <!-- services -->
     <div class="col-lg-9 col-md-9 col-sm-12">
-      <div class="block">
+      <div class="block" *ngFor="let number of [0,1,2,3,4,5]; let i = index">
         <img src="assets/images/topservice1.png" style="width: 100%;">
         <!-- Service -->
         <div class="firstClick">
@@ -84,14 +115,15 @@
             <span class="locID">1.2</span>
             <img src="assets/Icons/star.png" class="star">
             <span class="starRate">5</span>
-            <img class="down" src="assets/Icons/down.png">
+            <img class="down" src="assets/Icons/down.png" type="button" data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#detailServices'+i">
           </div>
         </div>
         <!-- detail service -->
-        <!-- class="secondClick"  -->
-        <div class="secondClick">
-          <button class="btn btn-primary gotoSalon">Go to salon Page</button>
-          <div class="inSecondDiv colServices">
+        <div class="secondClick collapse" id="detailServices{{i}}">
+          <button class="btn btn-primary gotoSalon" routerLink="/salon">Go to salon Page</button>
+          <div class="inSecondDiv colServices" type="button" data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#bookingService'+i">
             <div class="serviceText">
               <img class="serviceImg" src="assets/images/hairService.png">
               <div class="serviceDetail">
@@ -135,7 +167,7 @@
           </div>
         </div>
         <!-- booking service -->
-        <div class="thirdClick">
+        <div class="thirdClick collapse" id="bookingService{{i}}">
           <div class="inthirdDiv colServices">
             <div class="serviceText">
               <img class="serviceImg" src="assets/images/hairService.png">
@@ -189,9 +221,11 @@
               </div>
             </div>
           </div>
+          <button class="btn btn-primary gotoSalon" type="button" data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#cartService'+i">Check out</button>
         </div>
         <!-- Cart -->
-        <div class="fourthClick">
+        <div class="fourthClick collapse" id="cartService{{i}}">
           <h4 class="confirmBook">Confirm Booking</h4>
           <div class="cart">
             <p class="cartText">Service: The Wolf Cut </p>
@@ -208,652 +242,7 @@
             <button class="btn btn-primary removeBTN">Remove</button>
           </div>
           <button class="btn btn-primary priceBTN">
-            <img src="assets/images/cart.png">£40</button>
-          <button class="btn btn-primary removeBTN">Show less</button>
-          <div class="cart">
-            <h5 class="interest">Interest in these extra services</h5>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <img src="assets/images/topservice1.png" style="width: 100%;">
-        <!-- Service -->
-        <div class="firstClick">
-          <h4 class="headSer">A Cut Above</h4>
-          <div class="inFirstDiv">
-            <img src="assets/images/app1.png" class="ratingImg">
-            <img src="assets/images/app2.png" class="ratingImg">
-            <img src="assets/images/app3.png" class="ratingImg">
-            <img src="assets/images/app4.png" class="ratingImg">
-            <span class="rating">+4</span>
-            <img src="assets/Icons/marker.png" class="marker">
-            <span class="locID">1.2</span>
-            <img src="assets/Icons/star.png" class="star">
-            <span class="starRate">5</span>
-            <img src="assets/Icons/down.png" class="down">
-          </div>
-        </div>
-        <!-- detail service -->
-        <div class="secondClick">
-          <button class="btn btn-primary gotoSalon">Go to salon Page</button>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-        <!-- booking service -->
-        <div class="thirdClick">
-          <div class="inthirdDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inthirdDiv">
-            <div class="colServices">
-              <img src="assets/images/leftFrame.png">
-              <input type="date" class="dateIn">
-              <img src="assets/images/rightFrame.png">
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Cart -->
-        <div class="fourthClick">
-          <h4 class="confirmBook">Confirm Booking</h4>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <button class="btn btn-primary priceBTN">
-            <img src="assets/images/cart.png">£40</button>
-          <button class="btn btn-primary removeBTN">Show less</button>
-          <div class="cart">
-            <h5 class="interest">Interest in these extra services</h5>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <img src="assets/images/topservice1.png" style="width: 100%;">
-        <!-- Service -->
-        <div class="firstClick">
-          <h4 class="headSer">A Cut Above</h4>
-          <div class="inFirstDiv">
-            <img src="assets/images/app1.png" class="ratingImg">
-            <img src="assets/images/app2.png" class="ratingImg">
-            <img src="assets/images/app3.png" class="ratingImg">
-            <img src="assets/images/app4.png" class="ratingImg">
-            <span class="rating">+4</span>
-            <img src="assets/Icons/marker.png" class="marker">
-            <span class="locID">1.2</span>
-            <img src="assets/Icons/star.png" class="star">
-            <span class="starRate">5</span>
-            <img src="assets/Icons/down.png" class="down">
-          </div>
-        </div>
-        <!-- detail service -->
-        <div class="secondClick">
-          <button class="btn btn-primary gotoSalon">Go to salon Page</button>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-        <!-- booking service -->
-        <div class="thirdClick">
-          <div class="inthirdDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inthirdDiv">
-            <div class="colServices">
-              <img src="assets/images/leftFrame.png">
-              <input type="date" class="dateIn">
-              <img src="assets/images/rightFrame.png">
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Cart -->
-        <div class="fourthClick">
-          <h4 class="confirmBook">Confirm Booking</h4>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <button class="btn btn-primary priceBTN">
-            <img src="assets/images/cart.png">£40</button>
-          <button class="btn btn-primary removeBTN">Show less</button>
-          <div class="cart">
-            <h5 class="interest">Interest in these extra services</h5>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="infourthDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <img src="assets/images/topservice1.png" style="width: 100%;">
-        <!-- Service -->
-        <div class="firstClick">
-          <h4 class="headSer">A Cut Above</h4>
-          <div class="inFirstDiv">
-            <img src="assets/images/app1.png" class="ratingImg">
-            <img src="assets/images/app2.png" class="ratingImg">
-            <img src="assets/images/app3.png" class="ratingImg">
-            <img src="assets/images/app4.png" class="ratingImg">
-            <span class="rating">+4</span>
-            <img src="assets/Icons/marker.png" class="marker">
-            <span class="locID">1.2</span>
-            <img src="assets/Icons/star.png" class="star">
-            <span class="starRate">5</span>
-            <img src="assets/Icons/down.png" class="down">
-          </div>
-        </div>
-        <!-- detail service -->
-        <div class="secondClick">
-          <button class="btn btn-primary gotoSalon">Go to salon Page</button>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inSecondDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-        </div>
-        <!-- booking service -->
-        <div class="thirdClick">
-          <div class="inthirdDiv colServices">
-            <div class="serviceText">
-              <img class="serviceImg" src="assets/images/hairService.png">
-              <div class="serviceDetail">
-                <h3 class="serviceH">Hair service</h3>
-                <p class="serviceP">Wash & blow</p>
-                <p class="timeP">40 Min</p>
-              </div>
-            </div>
-            <div class="priceDiv">
-              <p class="priceP">£15</p>
-              <img class="dropDownArrow" src="assets/Icons/right.png">
-            </div>
-          </div>
-          <div class="inthirdDiv">
-            <div class="colServices">
-              <img src="assets/images/leftFrame.png">
-              <input type="date" class="dateIn">
-              <img src="assets/images/rightFrame.png">
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-            <div class="bookSlotCOl">
-              <div class="serviceText">
-                <img class="serviceImg" src="assets/images/Frame.png">
-                <div class="serviceDetail" style="margin-left: 8px;">
-                  <h3 class="detailText">A cut above</h3>
-                  <p class="detailText">Book With Mary Nunes</p>
-                  <p class="detailText">£35</p>
-                </div>
-              </div>
-              <p class="detailText" style="margin-top: 13px;">Select Time</p>
-              <div class="timesList">
-                <div class="textTime">9:30</div>
-                <div class="textTime">10:30</div>
-                <div class="textTime">11:30</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Cart -->
-        <div class="fourthClick">
-          <h4 class="confirmBook">Confirm Booking</h4>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <div class="cart">
-            <p class="cartText">Service: The Wolf Cut </p>
-            <p class="cartText">With: Elizabeth Smith</p>
-            <p class="cartText">Time: 11.00am- 12-00pm</p>
-            <p class="cartText" style="margin-bottom: 20px;">Price: £20</p>
-            <button class="btn btn-primary removeBTN">Remove</button>
-          </div>
-          <button class="btn btn-primary priceBTN">
-            <img src="assets/images/cart.png">£40</button>
+            <img src="assets/images/cart.png" routerLink="/home">£40</button>
           <button class="btn btn-primary removeBTN">Show less</button>
           <div class="cart">
             <h5 class="interest">Interest in these extra services</h5>

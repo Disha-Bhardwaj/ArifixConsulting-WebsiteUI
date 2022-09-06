@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPageComponent implements OnInit {
 
   constructor() { }
-
+  showMap = false
   ngOnInit(): void {
   }
-
+  showMapUI(event: any){
+    if (event.target.checked) {
+      this.showMap = true
+    } else {
+      this.showMap = false
+    }
+  }
 }
