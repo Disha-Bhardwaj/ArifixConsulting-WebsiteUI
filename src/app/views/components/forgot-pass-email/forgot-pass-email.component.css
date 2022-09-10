@@ -100,3 +100,52 @@ input:checked + .slider:before {
   flex-direction: row;
   justify-content: flex-end;
 }
+.col-lg-7.col-md-7.col-sm-12.shadow.p-3.mb-3.bg-white.rounded.otp {
+  text-align: center;
+  margin-top: 37px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+h3.OtpHead {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.37px;
+  color: #000000;
+  margin-top: 22px;
+}
+p.otpLine {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.24px;
+  color: #000000;
+  margin-top: 32px;
+}
+p.optResend {
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: 0.38px;
+  color: #007aff;
+}
+button.btn.btn-primary.confirm {
+  padding: 10px 20px;
+  width: 140px;
+  height: 58px;
+  background: #004fcb;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+  margin-top: 22px;
+}

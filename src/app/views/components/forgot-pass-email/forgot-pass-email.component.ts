@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ForgotPassEmailComponent implements OnInit {
 
   showNumberOption = false
+  showOTP = false
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +19,9 @@ export class ForgotPassEmailComponent implements OnInit {
     } else {
       this.showNumberOption = false
     }
+  }
+  showOTPScreen(){
+    this.showOTP = true
   }
 
 }
