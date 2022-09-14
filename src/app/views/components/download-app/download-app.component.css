@@ -1,0 +1,36 @@
+.visibleCol {
+    background: #E4E4E4;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 8%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 4px 12px rgb(0 0 0 / 16%);
+    border-radius: 6px;
+    padding: 20px;
+}
+h4.htext {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 50px;
+    letter-spacing: 0.36px;
+    color: #000000;
+}
+p.ptext {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.24px;
+    color: #000000;
+}
+.imagesDiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+p.warnP {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    letter-spacing: -0.41px;
+    margin-top: 9px;
+}
+span.warnSpan {
+    font-size: 24px;
+    font-weight: 400;
+}

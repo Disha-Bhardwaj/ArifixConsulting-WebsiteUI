@@ -1,0 +1,15 @@
+.container.topContainer {
+  text-align: center;
+  width: 50%;
+  margin-top: 4%;
+}
+h1.headTextLine {
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 50px;
+}
+@media (max-width: 770px) and (min-width: 200px) {
+  .pageNotFoundImg {
+    width: 100%;
+  }
+}

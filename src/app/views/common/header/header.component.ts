@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,14 +7,11 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   menuExpand: boolean = false
-
-  constructor(private router: Router) {
+  isOpened = false
+  constructor() {
   }
 
   ngOnInit(): void {
   }
 
-  navigateTo(login: string) {
-    this.router.navigate(['login']);
-  }
 }

@@ -1,38 +1,30 @@
 <div class="container">
   <div class="row m-4">
-    <div class="col-lg-5 col-md-5 col-sm-12 shadow p-3 mb-3 bg-white rounded">
-      <form [formGroup]="loginForm">
-        <h3>Login</h3>
-        <div class="mb-3">
-          <label class="form-label" for="txtEmail">Email<span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="txtEmail" formControlName="emailAdd">
-          <div *ngIf="f.emailAdd?.touched &&  f.emailAdd.invalid"
-               class="text-danger pt-2">
-            <div *ngIf="f.emailAdd?.errors?.required">Please enter Email address.</div>
-            <div *ngIf="f.emailAdd?.errors?.email">Invalid email address</div>
+    <div class="col-lg-5 col-md-5 col-sm-12 ">
+      <h3 class="headText">Login</h3>
+      <div class="container shadow p-3 mb-3 bg-white rounded">
+        <form [formGroup]="loginForm">
+          <div class="mb-3">
+            <label class="form-label" for="txtEmail">Email address</label>
+            <input type="text" class="form-control" id="txtEmail" formControlName="email">
           </div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="txtPassword">Password <span class="text-danger">*</span></label>
-          <div class="input-group">
-            <input type="password" class="form-control" id="txtPassword" formControlName="password">
-            <span style="cursor: pointer; margin-left: -30px; z-index: 100;"><img
-              src="../../../../assets/Icons/eye.png"></span>
+          <div class="mb-3">
+            <label class="form-label" for="txtPassword">Password </label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="txtPassword" formControlName="password">
+            </div>
           </div>
-          <div *ngIf="f.password?.touched &&  f.password.invalid"
-               class="text-danger pt-2">
-            <div *ngIf="f.password?.errors?.required">Please enter Password</div>
+          <div class="mb-3 forgotText">
+            <label class="form-label" routerLink="/forgot-password">Forgoton Password</label>
           </div>
-        </div>
-        <div class="mb-3">
-          <label>
-            <input type="checkbox"><span class="p-2">Stay logged in</span>
-          </label>
-        </div>
-        <div class="mb-3">
-          <button class="btn btn-primary rounded-pill" (click)="onLoginClick()">Login</button>
-        </div>
-      </form>
+          <div class="mb-3">
+            <button class="btn btn-primary loginbtn" (click)="login()">Login</button>
+          </div>
+        </form>
+        <p class="text">Don’t have an account <span style="color: #004FCB;">Sign up</span></p>
+        <p class="text" style="color: #000000;">Register later</p>
+      </div>
+
     </div>
     <div class="col-lg-1 col-md-1 col-sm-12  p-lg-3 m-lg-4">
       <div class="line-h"><span class="line-h-span ">Or</span></div>
@@ -43,91 +35,52 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-5 col-md-5 col-sm-12 shadow p-3 mb-5 bg-white rounded">
-      <h3>Register</h3>
-      <form [formGroup]="registerForm">
-        <div class="mb-3">
-          <label class="form-label" for="txtRegisterEmail">Email</label>
-          <input type="text" class="form-control" id="txtRegisterEmail" formControlName="emailAdd">
-          <div *ngIf="r.emailAdd?.touched &&  r.emailAdd.invalid"
-               class="text-danger pt-2">
-            <div *ngIf="r.emailAdd?.errors?.required">Please enter Email address</div>
-            <div *ngIf="r.emailAdd?.errors?.email">Invalid email address</div>
+    <div class="col-lg-5 col-md-5 col-sm-12">
+      <h3 class="headText">Register</h3>
+      <div class="container shadow p-3 mb-3 bg-white rounded">
+        <form [formGroup]="registrationForm">
+          <div class="mb-3">
+            <label class="form-label" for="txtRegisterEmail">Email</label>
+            <input type="text" class="form-control" id="txtRegisterEmail" formControlName="email">
           </div>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="txtPhoneExt">Phone Number</label>
-          <div class="row">
-            <div class="col-4">
-              <input type="number" class="form-control " id="txtPhoneExt" formControlName="phoneExt">
-            </div>
-            <div class="col-8 ">
-              <input type="number" class="form-control " id="txtPhone" formControlName="phone">
-            </div>
-            <div class="col-12">
-              <div *ngIf="r.phoneExt?.touched &&  r.phoneExt.invalid"
-                   class="text-danger pt-2">
-                <div *ngIf="r.phoneExt?.errors?.required">Please enter Phone prefix</div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-4">
+                <label class="form-label" for="txtPhoneExt">Area code</label>
+                <input type="number" class="form-control " id="txtPhoneExt" formControlName="areaCode">
               </div>
-              <div *ngIf="r.phone?.touched &&  r.phone.invalid"
-                   class="text-danger pt-2">
-                <div *ngIf="r.phone?.errors?.required">Please enter Phone</div>
+              <div class="col-8 ">
+                <label class="form-label" for="txtPhoneExt">Phone Number</label>
+                <input type="number" class="form-control " id="txtPhone" formControlName="phone">
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="mb-3">
-          <div class="row">
-            <div class="col-6 ">
-              <label class="form-label" for="txtCreatePassword">Create Password</label>
-              <input type="password" class="form-control " id="txtCreatePassword" formControlName="changePassword">
-
-            </div>
-            <div class="col-6">
-              <label class="form-label" for="txtRepeatPassword">Repeat Password</label>
-              <input type="password" class="form-control " id="txtRepeatPassword" formControlName="repeatPassword">
-
-            </div>
-            <div class="col-12">
-              <div *ngIf="r.changePassword?.touched && r.changePassword.invalid"
-                   class="text-danger">
-                <!-- <div *ngIf="f.newPassword.errors?.equalTo">Confirm Password must be equal to New Password.</div> -->
-                <div *ngIf="r.changePassword.errors?.required">Please Enter Password.</div>
-                <div *ngIf="r.changePassword.errors?.minlength">Password length should be minimum 6.</div>
-                <div *ngIf="r.changePassword.errors?.maxlength">Password length should be maximum 32.</div>
-                <div *ngIf="r.changePassword.errors?.pattern">Password format is a combination of numbers and letters.
-                </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6 ">
+                <label class="form-label" for="passwordInput">Password</label>
+                <input type="password" class="form-control " id="passwordInput" formControlName="password">
+                <span><img class="eyeIconImg" id="passStatus" src="assets/Icons/closeEye.png"
+                    (click)="viewPassword('password')"></span>
               </div>
-              <div *ngIf="r.repeatPassword?.touched && r.repeatPassword.invalid"
-                   class="text-danger">
-                <div *ngIf="r.repeatPassword.errors?.mustMatch">Repeat Password must be equal to Change Password.</div>
-                <div *ngIf="r.repeatPassword.errors?.required">Please Enter Password.</div>
-                <div *ngIf="r.repeatPassword.errors?.minlength">Password length should be minimum 6.</div>
-                <div *ngIf="r.repeatPassword.errors?.maxlength">Password length should be maximum 32.</div>
-                <div *ngIf="r.repeatPassword.errors?.pattern">Password format is a combination of numbers and letters.
-                </div>
-
+              <div class="col-6">
+                <label class="form-label" for="repeatPassword">Repeat Password</label>
+                <input type="password" class="form-control " id="repeatPassword" formControlName="repeatPassword">
+                <span><img class="eyeIconImg" id="repeatPassStatus" src="assets/Icons/closeEye.png"
+                    (click)="viewPassword('repeatPassword')"></span>
               </div>
             </div>
           </div>
-        </div>
-      </form>
-      <div class="mb-3">
-        <button class="btn btn-outline-primary rounded-pill" (click)="onRegisterClick()">Register</button>
+          <div class="mb-3 forgotText">
+            <label class="form-label">Need Help?</label>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary loginbtn" (click)="register()">Register</button>
+          </div>
+        </form>
       </div>
-      <div class="mb-3">
-        <div class="row">
-          <div class="col-8">
-            <label>
-              <input type="checkbox"><span class="p-2">By registering you agree to our T&C</span>
-            </label>
-          </div>
-          <div class="col-4 align-middle">
-            <a>Need Help</a>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>

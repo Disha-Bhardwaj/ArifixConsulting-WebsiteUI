@@ -12,8 +12,21 @@ import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { HomeComponent } from './views/components/home/home.component';
-import { ListingComponent } from './views/components/listing/listing.component';
-import { SearchComponent } from './views/components/search/search.component';
+import { ContactUsComponent } from './views/components/contact-us/contact-us.component';
+import { PageNotFoundComponent } from './views/components/page-not-found/page-not-found.component';
+import { AboutUsComponent } from './views/components/about-us/about-us.component';
+import { TermsConditionComponent } from './views/components/terms-condition/terms-condition.component';
+import { PrivicyComponent } from './views/components/privicy/privicy.component';
+import { ForgotPassEmailComponent } from './views/components/forgot-pass-email/forgot-pass-email.component';
+import { ResetPasswordComponent } from './views/components/reset-password/reset-password.component';
+import { ServiceComponent } from './views/components/service/service.component';
+import { MyDetailCustomerComponent } from './views/components/my-detail-customer/my-detail-customer.component';
+import { FeaturesComponent } from './views/components/features/features.component';
+import { MyBookingComponent } from './views/components/my-booking/my-booking.component';
+import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
+import { DownloadAppComponent } from './views/components/download-app/download-app.component';
+import { SearchPageComponent } from './views/components/search-page/search-page.component';
+import { NgxOtpInputModule } from "ngx-otp-input";
 
 @NgModule({
   declarations: [
@@ -22,8 +35,20 @@ import { SearchComponent } from './views/components/search/search.component';
     FooterComponent,
     LoginComponent,
     HomeComponent,
-    ListingComponent,
-    SearchComponent
+    ContactUsComponent,
+    PageNotFoundComponent,
+    AboutUsComponent,
+    TermsConditionComponent,
+    PrivicyComponent,
+    ForgotPassEmailComponent,
+    ResetPasswordComponent,
+    ServiceComponent,
+    MyDetailCustomerComponent,
+    FeaturesComponent,
+    MyBookingComponent,
+    SalonPageComponent,
+    DownloadAppComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +58,7 @@ import { SearchComponent } from './views/components/search/search.component';
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxOtpInputModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-right',

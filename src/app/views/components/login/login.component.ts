@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {CustomValidator} from "../../../shared/custom-validator";
-import {LoginService} from "../../../services/login.service";
-import {ToastrService} from "ngx-toastr";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -11,48 +9,59 @@ import {ToastrService} from "ngx-toastr";
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup = new FormGroup({
-    emailAdd: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-  });
+  loginForm!: FormGroup;
+  registrationForm!: FormGroup;
 
-
-  registerForm: FormGroup = new FormGroup({
-      emailAdd: new FormControl('', [Validators.required, Validators.email]),
-      phoneExt: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
-      changePassword: new FormControl('', [Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(32),
-        Validators.pattern("^(?![^A-Za-z]+$)(?![^0-9]+$)[0-9A-Za-z]+$")]),
-      repeatPassword: new FormControl('', [Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(32),
-        Validators.pattern("^(?![^A-Za-z]+$)(?![^0-9]+$)[0-9A-Za-z]+$"),
-      ]),
-    },
-    // @ts-ignore
-    CustomValidator.mustMatch('changePassword', 'repeatPassword'));
-
-  constructor(private login : LoginService,private toastr: ToastrService) {
+  constructor(private fb: FormBuilder) {
   }
-
   ngOnInit(): void {
+    this.formInitialize();
   }
-
-  get f() {
-    return this.loginForm.controls;
+  // form initialize
+  formInitialize() {
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: ['']
+    })
+    this.loginForm = this.fb.group({
+      email: [''],
+      areaCode: [''],
+      phone: [''],
+      password: [''],
+      repeatPassword: [''],
+    })
   }
-
-  get r() {
-    return this.registerForm.controls;
+  // on login
+  login() {
+    console.log(this.loginForm.value)
   }
-
-  onRegisterClick() {
-  this.toastr.error('Error while registration', 'Registration Error');
+  // on register
+  register() {
+    console.log(this.registrationForm.value)
   }
-
-  onLoginClick() {
-    this.toastr.success('Login Successful', 'Login');
+  // viewPass
+  viewPassword(clicked: any){
+    if(clicked == 'password'){
+      var passwordInput: any = document.getElementById('passwordInput');
+      var passwordStatus: any = document.getElementById('passStatus');
+      if(passwordInput.type == 'password'){
+        passwordInput.type = 'text';
+        passwordStatus.src = 'assets/Icons/eye.png'
+      } else{
+        passwordInput.type = 'password';
+        passwordStatus.src = 'assets/Icons/closeEye.png'
+      }
+    } else{
+      var repeatPassword: any = document.getElementById('repeatPassword');
+      var repeatPassStatus: any = document.getElementById('repeatPassStatus');
+      if(repeatPassword.type == 'password'){
+        repeatPassword.type = 'text';
+        repeatPassStatus.src = 'assets/Icons/eye.png'
+      } else{
+        repeatPassword.type = 'password';
+        repeatPassStatus.src = 'assets/Icons/closeEye.png'
+      }
+    }
+    
   }
 }
