@@ -34,7 +34,6 @@ const routes: Routes = [
   { path: 'salon', component: SalonPageComponent },
   { path: 'download-app', component: DownloadAppComponent },
   { path: 'search', component: SearchPageComponent },
-  // { path: 'search', loadChildren: () => import('./views/components/search/search.module').then(m => m.SearchModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
 
