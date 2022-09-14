@@ -1,0 +1,44 @@
+.container.topContainer {
+  text-align: center;
+  width: 50%;
+  margin-top: 4%;
+}
+.container.secondContainer{
+    margin-top:45px;
+}
+h1.headTextLine {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 60px;
+    letter-spacing: 0.37px;
+    color: #312F2F;
+}
+.upperText,
+.colText {
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #312f2f;
+}
+h1.colTextHead {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.36px;
+    color: #312F2F;
+}
+img.upperImg,
+img.colImg {
+  width: 100%;
+}
+.row.m-4.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.column {
+  padding: 0px !important;
+}

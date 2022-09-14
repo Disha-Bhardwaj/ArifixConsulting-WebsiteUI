@@ -1,0 +1,361 @@
+<div class="container-fluid main-layout">
+    <button class="buttonFilter" (click)="expanded = !expanded">
+        <img src="assets/Icons/rightArrow.png" style="transform: rotate(90deg);"> Fillters
+    </button>
+    <aside class="sidebar" *ngIf="expanded" @slidein>
+        <form style="padding: 10px;">
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label" for="txtPhoneExt">Time</label>
+                        <input type="number" class="form-control " id="txtPhoneExt" formControlName="areaCode">
+                    </div>
+                    <div class="col-8 ">
+                        <label class="form-label" for="txtPhoneExt">Time</label>
+                        <input type="number" class="form-control " id="txtPhone" formControlName="phone">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="txtRegisterEmail">Date</label>
+                <input type="text" class="form-control" id="txtRegisterEmail" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label" for="txtPhoneExt">Price</label>
+                        <input type="number" class="form-control " id="txtPhoneExt" formControlName="areaCode">
+                    </div>
+                    <div class="col-8 ">
+                        <label class="form-label" for="txtPhoneExt">Time</label>
+                        <input type="number" class="form-control " id="txtPhone" formControlName="phone">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </aside>
+    <div class="container">
+        <!-- salon nav and search -->
+        <div class="row m-4 firstRow">
+            <div class="col-lg-6 col-md-6 col-sm-12 ">
+                <img src="assets/images/salonIcon.png" class="salonPageIcon">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 searchcol">
+                <div><input class="searchInp" placeholder="search"><span><img class="searchIcom"
+                            src="assets/Icons/search.png"></span></div>
+
+            </div>
+        </div>
+        <!-- Image -->
+        <div class="row m-4 secondRow">
+            <img src="assets/images/imgSalon.png" class="salonPageIcon">
+        </div>
+        <!-- salon details -->
+        <div class="row m-4 thirdRow">
+            <div class="col-lg-6 col-md-6 col-sm-12 addressC">
+                <div class="details">
+                    <h6 class="headName">FLORANCE </h6>
+                    <p class="pAddress">Lange Striche 29, 91074
+                        Herzogenaurach</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 locationCol">
+                <div class="place">
+                    <img src="assets/Icons/marker.png"><span style="margin-left: 12px;">1.2 km</span>
+                    <span style="margin-left: 30px;">Map View </span>
+                    <label class="switch" style="margin-left: 17px;">
+                        <input type="checkbox" (change)="showMapUI($event)">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- display map -->
+        <div class="row m-4">
+            <iframe *ngIf="showMap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2637845.982375067!2d13.231848971506263!3d49.78566123052315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd7dd8243%3A0xf8661c75d3db586f!2sCzechia!5e0!3m2!1sen!2sin!4v1662138137642!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- salon details switch -->
+        <div class="row m-4 fourthRow">
+            <div class="col-lg-12 col-md-12 col-sm-12 switchCol">
+                <h5 class="switchText" [class.active]="viewMode=='service'||viewMode=='serviceDetail'"
+                    (click)="viewMode='service'" style="padding-left: 0px;">Service</h5>
+                <h5 class="switchText" [class.active]="viewMode=='details'" (click)="viewMode='details'">Details</h5>
+                <h5 class="switchText" [class.active]="viewMode=='staff'" (click)="viewMode='staff'">Staff</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container" [ngSwitch]="viewMode">
+        <!-- Services -->
+        <div class="row m-4 servicesRow" *ngSwitchCase="'service'">
+            <div class="col-lg-12 col-md-12 col-sm-12 colServices">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <h3 class="serviceHead">Hair service</h3>
+                </div>
+                <img class="dropDownArrow" src="assets/Icons/down.png">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices" (click)="viewMode='serviceDetail'">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices" style="margin-left: 20px;">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices" style="margin-left: 20px;">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices" style="margin-left: 20px;">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 colServices" style="margin-left: 20px;">
+                <div class="serviceText">
+                    <img class="serviceImg" src="assets/images/hairService.png">
+                    <div class="serviceDetail">
+                        <h3 class="serviceH">Hair service</h3>
+                        <p class="serviceP">Wash & blow</p>
+                        <p class="timeP">40 Min</p>
+                    </div>
+                </div>
+                <div class="priceDiv">
+                    <p class="priceP">£15</p>
+                    <img class="dropDownArrow" src="assets/Icons/right.png">
+                </div>
+            </div>
+        </div>
+        <!-- show Service detail single service -->
+        <div class="row m-4 serviceDetailRow" *ngSwitchCase="'serviceDetail'">
+            <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+            <div class="col-lg-8 col-md-8 col-sm-12 detailSerCol">
+                <!-- change service -->
+                <div class="col-lg-12 col-md-12 col-sm-12 colServices">
+                    <img src="assets/images/leftFrame.png">
+                    <input type="date" class="dateIn">
+                    <img src="assets/images/rightFrame.png">
+                </div>
+                <!-- service -->
+                <div class="col-lg-12 col-md-12 col-sm-12 colServices" style="margin-top: 15px;">
+                    <div class="serviceText">
+                        <img class="serviceImg" src="assets/images/hairService.png">
+                        <div class="serviceDetail">
+                            <h3 class="serviceH">Hair service</h3>
+                            <p class="serviceP">Wash & blow</p>
+                            <p class="timeP">40 Min</p>
+                        </div>
+                    </div>
+                    <div class="priceDiv">
+                        <p class="priceP">£15</p>
+                        <img class="dropDownArrow" src="assets/Icons/right.png">
+                    </div>
+                </div>
+                <!-- book slot -->
+                <div class="col-lg-12 col-md-12 col-sm-12 bookSlotCOl">
+                    <div class="serviceText">
+                        <img class="serviceImg" src="assets/images/Frame.png">
+                        <div class="serviceDetail" style="margin-left: 8px;">
+                            <h3 class="detailText">A cut above</h3>
+                            <p class="detailText">Book With Mary Nunes</p>
+                            <p class="detailText">£35</p>
+                        </div>
+                    </div>
+                    <p class="detailText" style="margin-top: 13px;">Select Time</p>
+                    <div class="timesList">
+                        <div class="textTime">9:30</div>
+                        <div class="textTime">10:30</div>
+                        <div class="textTime">11:30</div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 bookSlotCOl">
+                    <div class="serviceText">
+                        <img class="serviceImg" src="assets/images/Frame.png">
+                        <div class="serviceDetail" style="margin-left: 8px;">
+                            <h3 class="detailText">A cut above</h3>
+                            <p class="detailText">Book With Mary Nunes</p>
+                            <p class="detailText">£35</p>
+                        </div>
+                    </div>
+                    <p class="detailText" style="margin-top: 13px;">Select Time</p>
+                    <div class="timesList">
+                        <div class="textTime">9:30</div>
+                        <div class="textTime">10:30</div>
+                        <div class="textTime">11:30</div>
+                    </div>
+                </div>
+                <!-- buttons -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <button class="btn btn-primary addSerBTN">Add Extra Servive</button>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <button class="btn btn-primary checkoutBTN">Checkout</button>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+        </div>
+        <!-- details -->
+        <div class="row m-4 detailsRow" *ngSwitchCase="'details'">
+            <div class="col-lg-5 col-md-5 col-sm-12 ">
+                <p class="openingText">Opening Times</p>
+                <div class="openDays">
+                    <div class="row m-4">
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Monday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Tuesday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Wednesday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Thursday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Friday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Saturday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">09:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">17:00</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="day">Sunday</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">closed</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 ">
+                            <p class="time">closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 ">
+                <p class="addressText">Address</p>
+                <p class="addressText">City</p>
+                <p class="addressText">Country</p>
+                <p class="addressText">Zipcode</p>
+                <p class="addressText">Phone Number</p>
+            </div>
+
+        </div>
+        <!-- staff -->
+        <div class="row m-4 staffRow" *ngSwitchCase="'staff'">
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 staffCOL">
+                <img class="staffImg" src="assets/images/userImg.png">
+                <div class="staffDetail">
+                    <p class="staffName">Sonia J. Garcia</p>
+                    <p class="staffService">Barber 1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
