@@ -13,11 +13,12 @@ default:
 
 
 build:build:
-  image: docker:19.03.13
+  image: docker:20.10.16
   services:
-    - docker:19.03.13-dind
+    - name: docker:20-dind
   stage: build
-  script:
+  before_script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+  script:
     - docker build -t $container_image .
     - docker push $container_image
