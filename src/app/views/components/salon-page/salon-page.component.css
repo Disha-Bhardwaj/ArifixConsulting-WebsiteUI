@@ -58,19 +58,8 @@ p.addressText {
   letter-spacing: -0.41px;
   color: #312f2f;
 }
-input.searchInp {
-  padding: 20px 50px;
-  background: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 6px;
-  width: 350px;
-  height: 50px;
+input.searchInpSCom {
   margin-left: 6% !important;
-}
-img.searchIcom {
-  margin-left: -89%;
-  width: 24px;
-  height: 24px;
 }
 .searchcol {
   display: flex;
@@ -78,57 +67,6 @@ img.searchIcom {
   align-content: center;
   justify-content: flex-end;
   align-items: flex-end;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-input:checked + .slider {
-  background-color: #007aff;
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-  background-color: #d0e3f1;
-}
-.slider.round {
-  border-radius: 34px;
-}
-.slider.round:before {
-  border-radius: 50%;
 }
 .place {
   display: flex;
@@ -171,15 +109,6 @@ p.staffService {
   padding: 10px;
   border-radius: 6px;
 }
-.colServices {
-  padding: 3px 10px 3px 5px;
-  background: #ffffff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
 h3.serviceHead {
   font-weight: 400;
   font-size: 20px;
@@ -188,11 +117,7 @@ h3.serviceHead {
   color: #312f2f;
   margin-left: 7px;
 }
-.serviceText {
-  display: flex;
-  align-items: center;
-}
-.col-lg-4.col-md-4.col-sm-12.colServices {
+.col-lg-4.col-md-4.col-sm-12.colServicesCom {
   width: 32%;
   margin-top: 15px;
   cursor: pointer;
@@ -229,30 +154,9 @@ h3.serviceHead {
   border-radius: 6px;
   padding: 10px;
 }
-h3.serviceH,
-.timeP,
-p.serviceP {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  color: #312f2f;
-  margin-bottom: 0px !important;
-  margin-left: 7px;
-}
 p.serviceP {
   font-size: 18px;
   line-height: 22px;
-}
-.priceDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-p.priceP {
-  margin-top: 14px;
-  margin-right: 12px;
 }
 button.btn.btn-primary.addSerBTN,
 button.btn.btn-primary.checkoutBTN {
@@ -274,13 +178,6 @@ button.btn.btn-primary.checkoutBTN {
   background: #004fcb;
   border: none;
   color: #ffffff;
-}
-.detailText {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  color: #312F2F;
-  margin-bottom: 0px;
 }
 .bookSlotCOl{
   padding: 10px;
