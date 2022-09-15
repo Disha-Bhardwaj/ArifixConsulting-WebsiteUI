@@ -2,6 +2,7 @@ stages:
   - build
 
 variables:
+  DOCKER_HOST: tcp://docker:2376
   DOCKER_TLS_CERTDIR: "/certs"
   container_image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
 
