@@ -1,33 +1,3 @@
-h1.colTextHead {
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 60px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.37px;
-  color: #312f2f;
-}
-p.colText {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: -0.41px;
-  color: #312f2f;
-}
-button.btn.btn-primary.Register {
-  width: 180px;
-  height: 53px;
-  left: 122px;
-  top: 494px;
-  background: #004fcb;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 32px;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #ffffff;
-}
 .container-fluid.firstContainer {
   background: #e4e4e4;
   margin-top: -683px !important;
@@ -38,149 +8,16 @@ button.btn.btn-primary.Register {
 .row.m-4.row.firstRow {
   padding-top: 683px;
 }
-h2.topServicehead {
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 41px;
-  text-align: center;
-  letter-spacing: 0.35px;
-  color: #000000;
-}
-p.topServicePara {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.41px;
-  color: #000000;
-}
-button.btn.btn-primary.createAcc {
-  padding: 10px 40px;
-  width: 216px;
-  height: 47px;
-  background: #004fcb;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.25px;
-  color: #ffffff;
-}
-.row.m-4.row.rowBtn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.card {
-  width: 256px;
-  background: #ffffff;
-  box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 10%);
-  border-radius: 10px;
-}
-h5.card-title {
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 32px;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #000000;
-}
-h1.colTextHeadTwo {
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 41px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.35px;
-  color: #000000;
+h1.colTextHeadTwoCom {
   text-align: center;
 }
-p.colTextParaTwo {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.41px;
-  color: #000000;
-}
-.col-lg-6.col-md-6.col-sm-12.p-3.mb-3.fourthCol {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-input.searchInp {
-  padding: 20px 50px;
-  width: 335px;
-  height: 50px;
-  margin-top: 32px;
-  background: #ffffff;
-  border-radius: 6px;
+input.searchInpCom {
   border: none;
 }
-button.btn.btn-primary.Search {
-  padding: 10px 40px;
-  width: 164px;
-  height: 53px;
-  background: #004fcb;
-  border-radius: 6px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 32px;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #ffffff;
-  margin-top: 36px;
+button.btn.btn-primary.SearchCom {
   border: none;
 }
-.col-lg-6.col-md-6.col-sm-12.p-3.mb-3.firstCol {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-img.searchIcom {
-  margin-top: -75px;
-  margin-left: -152px;
-  width: 24px;
-  height: 24px;
-}
-img.colImgTwo {
-  width: 533.7px;
-  height: 486.21px;
-}
-img.tickMarkImg {
-  margin-right: 13px;
-}
-h2.designTempHead {
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 41px;
-  display: flex;
-  letter-spacing: 0.35px;
-  color: #000000;
-  margin-top: -3%;
-}
-p.designTempP {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.41px;
-  color: #000000;
-}
-.row.m-4.row.rowBtn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-button.btn.btn-primary.createAcc,
+button.btn.btn-primary.createAccCom,
 button.btn.btn-primary.mangeBuis {
   width: 266px;
   height: 50px;

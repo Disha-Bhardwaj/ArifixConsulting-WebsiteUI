@@ -28,3 +28,278 @@ $font-family-sans-serif: "Montserrat", "Actor";
   background: #E4E4E4 !important;
   border: none !important;
 }
+// common design
+h1.colTextHeadCom {
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.37px;
+  color: #312f2f;
+}
+p.colTextCom {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 39px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #312f2f;
+}
+button.btn.btn-primary.RegisterCom {
+  width: 180px;
+  height: 53px;
+  background: #004fcb;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+}
+h2.topServiceheadCom {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.35px;
+  color: #000000;
+}
+p.topServiceParaCom {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #000000;
+}
+button.btn.btn-primary.createAccCom {
+  padding: 10px 40px;
+  width: 216px;
+  height: 47px;
+  background: #004fcb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.25px;
+  color: #ffffff;
+}
+h1.colTextHeadTwoCom {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.35px;
+  color: #000000;
+}
+.col-lg-6.col-md-6.col-sm-12.p-3.mb-3.fourthColCom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button.btn.btn-primary.SearchCom,
+button.btn.btn-primary.loginbtnCom,
+button.btn.btn-primary.confirmCom {
+  padding: 10px 40px;
+  width: 164px;
+  height: 53px;
+  background: #004fcb;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.32px;
+  color: #ffffff;
+  margin-top: 32px;
+}
+input.searchInpCom {
+  padding: 20px 50px;
+  width: 335px;
+  height: 50px;
+  margin-top: 32px;
+  background: #ffffff;
+  border-radius: 6px;
+}
+img.searchIcomCom, img.searchIcomSCom {
+  margin-top: -75px;
+  margin-left: -152px;
+  width: 24px;
+  height: 24px;
+}
+img.searchIcomSCom {
+  margin-left: -89%;
+  margin-top:  0px;
+}
+h2.designTempHead {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 41px;
+  display: flex;
+  letter-spacing: 0.35px;
+  color: #000000;
+  margin-top: -3%;
+}
+img.colImgTwoCom {
+  width: 533.7px;
+  height: 486.21px;
+}
+p.designTempPCom {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.41px;
+  color: #000000;
+}
+.col-lg-6.col-md-6.col-sm-12.p-3.mb-3.firstColCom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.row.m-4.row.rowBtnCom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.needHelpCom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+h3.headTextCom {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.36px;
+  color: #000000;
+}
+.form-control.Com {
+  height: 50px !important;
+  border-radius: 6px !important;
+}
+.shadow.p-3.mb-3.bg-white.rounded.common {
+  background: #e4e4e4 !important;
+  margin-top: 16px;
+  padding-top: 37px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 50px !important;
+  border-radius: 6px !important;
+}
+input.searchInpSCom {
+  padding: 20px 50px;
+  width: 350px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 6px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #007aff;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #d0e3f1;
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.colServicesCom {
+  padding: 3px 10px 3px 5px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.serviceTextCom {
+  display: flex;
+  align-items: center;
+}
+h3.serviceH,
+.timeP,
+p.serviceP {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #312f2f;
+  margin-bottom: 0px !important;
+  margin-left: 7px;
+}
+p.priceP {
+  margin-top: 14px;
+  margin-right: 12px;
+}
+.priceDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.detailTextCom {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #312f2f;
+  margin-bottom: 0px;
+}
