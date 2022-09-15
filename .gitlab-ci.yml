@@ -2,7 +2,6 @@ stages:
   - build
 
 variables:
-  DOCKER_HOST: tcp://docker:2376
   DOCKER_TLS_CERTDIR: "/certs"
   container_image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
 
@@ -13,11 +12,12 @@ default:
 
 
 build:build:
-  image: docker:19.03.13
+  image: docker:20.10.16
   services:
-    - docker:19.03.13-dind
+    - docker:20.10.16-dind
   stage: build
+  before_script:
+    - echo "$DOCKER_REGISTRY_PASS" | docker login $DOCKER_REGISTRY --username $DOCKER_REGISTRY_USER --password-stdin
   script:
-    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
     - docker build -t $container_image .
     - docker push $container_image
