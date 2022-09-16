@@ -15,18 +15,14 @@
 
 $font-family-sans-serif: "Montserrat", "Actor";
 
-.ngx-otp-input-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.ngx-otp-input {
+.otp-input {
   width: 69px !important;
   height: 69px !important;
   text-align: center;
   font-size: 1.25rem;
   background: #E4E4E4 !important;
   border: none !important;
+  margin-right: 18px !important;
 }
 // common design
 h1.colTextHeadCom {

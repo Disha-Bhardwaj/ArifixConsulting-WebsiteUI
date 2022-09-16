@@ -43,9 +43,7 @@
             <img src="assets/images/lock.png">
             <h3 class="OtpHead">Type the code </h3>
             <p class="otpLine">A verification code has been sent to your phone please check it and enter it here </p>
-            <!-- <ngx-otp-input [config]="otpInputConfig" (otpChange)="handeOtpChange($event)"
-                (fill)="handleFillEvent($event)">
-            </ngx-otp-input> -->
+            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
             <p class="optResend">Resend code</p>
             <button class="btn btn-primary confirmCom" routerLink="/reset-password">Confirm</button>
         </div>

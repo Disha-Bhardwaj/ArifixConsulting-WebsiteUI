@@ -45,4 +45,7 @@ export class ForgotPassEmailComponent implements OnInit {
   // handleFillEvent(value: string): void {
   //   console.log(value);
   // }
+  onOtpChange(value:any){
+    console.log(value)
+  }
 }

@@ -26,7 +26,7 @@ import { MyBookingComponent } from './views/components/my-booking/my-booking.com
 import { SalonPageComponent } from './views/components/salon-page/salon-page.component';
 import { DownloadAppComponent } from './views/components/download-app/download-app.component';
 import { SearchPageComponent } from './views/components/search-page/search-page.component';
-
+import { NgOtpInputModule } from  'ng-otp-input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +57,7 @@ import { SearchPageComponent } from './views/components/search-page/search-page.
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgOtpInputModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-right',
